@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onSaveInstanceState(Bundle outState){
         super.onSaveInstanceState(outState);
-
         outState.putString(KEY_NAME, name);
     }
 
@@ -53,16 +52,17 @@ public class MainActivity extends AppCompatActivity
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ok_button:
-            String name = inputName.getText().toString();
-                if (name != null && name.length() > 0)
-                outputView.setText("Hello, " + name + "\nNice to see you!");
+                name = inputName.getText().toString();
+                if (name != null && name.length() > 0) {
+                    outputView.setText("Hello, " + name + "\nNice to see you!");
+                }
             break;
         }
     }
 
     private void greet(){
         if (name != null && name.length() > 0){
-            outputView.setText("Hello, " + name + "¥nNice to see you!");
+            outputView.setText("Hello, " + name + "\nNice to see you!");
         }
     }
 
