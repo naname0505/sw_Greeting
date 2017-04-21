@@ -11,6 +11,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity
         implements View.OnClickListener {
 
+
     private TextView outputView;
     private EditText inputName;
     private Button okButton;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.ok_button:
             String name = inputName.getText().toString();
                 if (name != null && name.length() > 0)
-                outputView.setText("Hello, " + name + "\nNice to see yoU!");
+                outputView.setText("Hello, " + name + "\nNice to see you!");
             break; }
     }
 
