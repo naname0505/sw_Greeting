@@ -12,10 +12,11 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity
         implements View.OnClickListener {
 
-
     private TextView outputView;
     private EditText inputName;
     private Button   okButton;
+    private Button   noButton;
+
 
     private final static String KEY_NAME = "MainActivity.name";
     private String name = null;
@@ -28,6 +29,9 @@ public class MainActivity extends AppCompatActivity
         inputName = (EditText) findViewById(R.id.input_name);
         okButton = (Button) findViewById(R.id.ok_button);
         okButton.setOnClickListener(this);
+
+        noButton = (Button) findViewById(R.id.no_button);
+        noButton.setOnClickListener(this);
 
         if(savedInstanceState != null){
             name = savedInstanceState.getString(KEY_NAME);
@@ -56,7 +60,15 @@ public class MainActivity extends AppCompatActivity
                 if (name != null && name.length() > 0) {
                     outputView.setText("Hello, " + name + "\nNice to see you!");
                 }
-            break;
+                break;
+
+
+            case R.id.no_button:
+                name = inputName.getText().toString();
+                if(name != null && name.length() > 0){
+                    outputView.setText("");
+                }
+                break;
         }
     }
 
